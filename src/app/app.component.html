@@ -5,9 +5,10 @@
     <div>
         <h6>Click on a date to see news headline</h6>
         <div *ngFor="let n of news">
-            <button (click)="headline(n.newsDate)" class="my-1">
+            <button [ngClass]="{ 'active' : isValue == n.newsDate }" (click)="headline(n.newsDate)" class="my-1">
                 {{n.newsDate}}
             </button>
+
             <div  *ngIf="n.newsDate === clickedDate">
                 <ul *ngFor="let headLine of n.headline">
                     <li>{{headLine.title}}</li>
