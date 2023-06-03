@@ -8,7 +8,7 @@
             <button (click)="headline(n.newsDate)" class="my-1">
                 {{n.newsDate}}
             </button>
-            <div *ngIf="n.newsDate === clickedDate">
+            <div  *ngIf="n.newsDate === clickedDate">
                 <ul *ngFor="let headLine of n.headline">
                     <li>{{headLine.title}}</li>
                 </ul>

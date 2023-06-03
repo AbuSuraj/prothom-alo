@@ -11,8 +11,7 @@ export class AppComponent implements OnInit {
   title = 'prothom-alo';
   clickedDate: any;
   constructor(private newsService: NewsServiceService){}
-  ngOnInit(): void { 
-    // this.news
+  ngOnInit(): void {  
     this.newsService.news().subscribe(result => {
       this.news = result;
       console.log(result);
