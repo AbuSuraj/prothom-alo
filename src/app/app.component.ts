@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NewsServiceService } from './news-service.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   isValue: string ='1';
   date = new Date();
   dateInString = JSON.stringify(this.date).slice(1,11);
-
+  isTodayClicked = false;
   constructor(private newsService: NewsServiceService){}
 
  ngOnInit(): void {  
@@ -28,11 +28,12 @@ export class AppComponent implements OnInit {
     this.isValue = date;
   }
 
-  getCurrentDayNews(date:boolean){
+  getCurrentDayNews(){
     const today = this.news[0].newsDate;
     if(today !==  this.dateInString){
       this.newsService.getTodaysNews(this.date).subscribe(result =>{
-        console.log('todaysNews')
+        console.log('todaysNews');
+        this.isTodayClicked = true;
       })
     }
  

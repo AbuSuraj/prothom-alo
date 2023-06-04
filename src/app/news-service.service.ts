@@ -10,6 +10,7 @@ export class NewsServiceService {
   getNews(){
      return this.http.get(`http://localhost:5000/news`);
   }
+  
   getTodaysNews(date:any){
      return this.http.post(`http://localhost:5000/addNews`, '');
   }
