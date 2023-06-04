@@ -4,8 +4,9 @@
     </div>
     <div>
         <h6 class="my-1 mx-5">Click on a date to see news headline</h6>
+        <button class="my-1 mx-5" type="button" (click)="getCurrentDayNews(true)">Get Today's News</button>
         <div *ngFor="let n of news">
-            <button [ngClass]="{ 'active' : isValue == n.newsDate }" (click)="headline(n.newsDate)" class="my-1 mx-5">
+            <button type="button" [ngClass]="{ 'active' : isValue == n.newsDate }" (click)="headline(n.newsDate)" class="my-1 mx-5">
                 {{n.newsDate}}
             </button>
 
